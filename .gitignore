@@ -1,0 +1,42 @@
+# Qt build folder
+build/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.autosave
+
+# QtCreator CMake generated
+CMakeLists.txt.user*
+*.creator.*
+*.user
+
+# QMake intermediate files
+Makefile*
+*.moc
+*.qrc.depends
+*.qrc.temp
+*.qmlc
+*.jsc
+*.moc
+*.rcc
+
+# Directories
+.qtc_clangd/
+.qtc_reparse_all/
+.idea/
+.vscode/
+
+# Other OS junk
+.DS_Store
+Thumbs.db
