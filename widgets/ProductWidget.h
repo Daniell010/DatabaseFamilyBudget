@@ -16,6 +16,8 @@ public:
 
 private slots:
     void onAddProductClicked();
+    void onProductCellChanged(int row, int column);
+
 
 private:
     Ui::ProductWidget *ui;

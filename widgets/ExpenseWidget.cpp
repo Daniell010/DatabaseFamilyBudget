@@ -65,6 +65,7 @@ void ExpenseWidget::loadExpenseRecords()
 
 void ExpenseWidget::onAddExpenseClicked()
 {
+    loadExpenseRecords(); // если у тебя есть метод для перезагрузки таблицы
     QString dateStr = ui->editDate->date().toString("yyyy-MM-dd");
     QString category = ui->comboCategory->currentText();
     double amount = ui->editAmount->value();

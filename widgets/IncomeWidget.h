@@ -20,6 +20,8 @@ public slots:
 
 private slots:
     void onAddIncomeClicked();
+    void onIncomeCellChanged(int row, int column);
+    void onDeleteIncomeClicked();
 
 private:
     Ui::IncomeWidget *ui;
