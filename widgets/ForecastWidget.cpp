@@ -49,33 +49,6 @@ void ForecastWidget::loadForecastRecords()
 
 void ForecastWidget::onAddForecastClicked()
 {
-    QStringList comments = {
-        "Ожидаем отпуск", "Повышение зарплаты", "Крупная покупка",
-        "Стабильный месяц", "Экономим", "Увеличены коммунальные расходы",
-        "Подарки", "Каникулы", "Поездка", "Незапланированные траты"
-    };
-
-    for (int i = 0; i < 10; ++i) {
-        QString dateStr = QDate::currentDate().addDays(qrand() % 60).toString("yyyy-MM-dd");
-        double expectedIncome = (qrand() % 20000) + 10000;   // от 10,000 до 30,000
-        double expectedExpense = (qrand() % 15000) + 5000;   // от 5,000 до 20,000
-        QString comment = comments[i % comments.size()];
-
-        QSqlQuery query;
-        query.prepare("INSERT INTO forecasts (forecast_date, expected_income, expected_expense, comment) VALUES (?, ?, ?, ?)");
-        query.addBindValue(dateStr);
-        query.addBindValue(expectedIncome);
-        query.addBindValue(expectedExpense);
-        query.addBindValue(comment);
-
-        if (!query.exec()) {
-            qDebug() << "Insert forecast failed:" << query.lastError().text();
-        }
-    }
-
-    loadForecastRecords(); // если у тебя есть функция перезагрузки таблицы
-
-
     QString dateStr = ui->editDate->date().toString("yyyy-MM-dd");
     double expectedIncome = ui->editExpectedIncome->value();
     double expectedExpense = ui->editExpectedExpense->value();
